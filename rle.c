@@ -9,14 +9,14 @@
 static void    ft_putchar_fd(int c, int fd) {
     write(fd, &c, 1);
 }
-
+/*
 static void    ft_putstr_fd(char *s, int fd) {
     if (!s)
         return ;
     while (*s)
         ft_putchar_fd(*s, fd);
 }
-
+*/
 int rle(char *plain) {
     char    c;
     size_t  len;
