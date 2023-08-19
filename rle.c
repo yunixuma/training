@@ -9,14 +9,26 @@
 static void    ft_putchar_fd(int c, int fd) {
     write(fd, &c, 1);
 }
+
 /*
+static size_t   ft_strlen(char *s) {
+    char    *s_head;
+
+    if (!s)
+        return (0);
+    s_head = s;
+    while (*s)
+        s++;
+    return (s - s_head);
+}
+
 static void    ft_putstr_fd(char *s, int fd) {
     if (!s)
         return ;
-    while (*s)
-        ft_putchar_fd(*s, fd);
+    write(fd, s, ft_strlen(s));
 }
 */
+
 int rle(char *plain) {
     char    c;
     size_t  len;
@@ -38,6 +50,8 @@ int rle(char *plain) {
         ft_putchar_fd(c, FD);
         plain += len;
     }
+    ft_putchar_fd('\0', FD);
+    ft_putchar_fd('\0', FD);
     return (0);
 }
 
